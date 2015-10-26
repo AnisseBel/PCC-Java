@@ -20,6 +20,23 @@ public class Joueur {
     }
     
     public void crediter() {
-        score=score+1;
+        score=getScore()+1;
     }
+    
+    public Choix Choisir() {
+        return saisie.proposerChoix();
+    }
+    
+    public void Ecrirescore() {
+        System.out.println("");
+              
+    }
+
+    /**
+     * @return the score
+     */
+    public int getScore() {
+        return score;
+    }
+   
 }
