@@ -9,17 +9,11 @@ package epsi.mtp.b3.benatiapunzano.tp1.chifoumi;
  *
  * @author Sofian
  */
-public class Joueur {
-    private String nom;
-    private int score = 0;
-    private IHMSaisie saisie;
-    
-    public Joueur(String n){
-        nom=n;
-        saisie=new IHMSaisie(nom);
-    }
-    
-    public void crediter() {
-        score=score+1;
-    }
+public class TestIHMSaisie {
+    public static void main(String[] arg) {
+		IHMSaisie saisie = new IHMSaisie("toto");
+		Choix choix = saisie.proposerChoix();
+		System.out.println("Le choix de toto est " + choix);
+	}
+
 }
