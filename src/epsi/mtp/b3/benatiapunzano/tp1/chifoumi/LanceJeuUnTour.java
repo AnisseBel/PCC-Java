@@ -17,8 +17,8 @@ import javax.swing.JOptionPane;
 public class LanceJeuUnTour {
     
     public static void main(String[] arg) {
-          String A = (String) JOptionPane.showInputDialog(null, "Quel est votre nom ?", "CHI-FOU-MI!", JOptionPane.INFORMATION_MESSAGE,null,null,"Joueur 1");   
-          String B = (String) JOptionPane.showInputDialog(null, "Quel est votre nom ?", "CHI-FOU-MI!", JOptionPane.INFORMATION_MESSAGE,null,null,"Joueur 2");
+          String A = (String) JOptionPane.showInputDialog(null, "Joueur 1 quel est votre nom ?", "CHI-FOU-MI!", JOptionPane.INFORMATION_MESSAGE,null,null,"Joueur 1");   
+          String B = (String) JOptionPane.showInputDialog(null, "Joueur 2 quel est votre nom ?", "CHI-FOU-MI!", JOptionPane.INFORMATION_MESSAGE,null,null,"Joueur 2");
          
     JeuUnTour game = new JeuUnTour(A,B);
 	game.Jouer();

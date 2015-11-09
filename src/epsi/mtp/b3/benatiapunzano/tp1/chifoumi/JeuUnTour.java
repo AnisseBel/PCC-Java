@@ -71,9 +71,11 @@ public class JeuUnTour {
     }
     public void conclure(){
         if( PlayerA.getScore() > PlayerB.getScore()){
-            System.out.println("Winner is "+PlayerA.getNom());
+        JOptionPane.showMessageDialog(null, "Le vainqueur est "+PlayerA.getNom(), "CHI-FOU-MI", JOptionPane.INFORMATION_MESSAGE, null);    
+        //System.out.println("Le vainqueur est "+PlayerA.getNom());
         }else{
-            System.out.println("Winner is "+PlayerB.getNom());
+        JOptionPane.showMessageDialog(null, "Le vainqueur est "+PlayerB.getNom(), "CHI-FOU-MI", JOptionPane.INFORMATION_MESSAGE, null);        
+        //System.out.println("Le vainqueur est "+PlayerB.getNom());
         }
     }
 }
