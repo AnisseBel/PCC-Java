@@ -30,7 +30,7 @@ public class Joueur {
     }
     
     public void Ecrirescore() {
-        JOptionPane.showMessageDialog(null, "Le score de "+getNom()+" est " + getScore());      
+        JOptionPane.showMessageDialog(null, "Le score de "+getNom()+" est " + getScore());     
     }
     
     

@@ -5,6 +5,8 @@
  */
 package epsi.mtp.b3.benatiapunzano.tp1.chifoumi;
 
+import javax.swing.JOptionPane;
+
 
 /**
  *
@@ -20,10 +22,18 @@ public class JeuUnTour {
     }
     
     public void Jouer(){
-        Tour();
-        PlayerA.Ecrirescore();
-        PlayerB.Ecrirescore();
+        boolean fini = false;
+        while(!fini){
         
+        Tour();
+        JOptionPane.showMessageDialog(null, "Score :\n"+PlayerA.getNom()+" : "+PlayerA.getScore()+"\n"+PlayerB.getNom()+" : "+PlayerB.getScore(), "Résultat", JOptionPane.INFORMATION_MESSAGE, null);
+        //PlayerA.Ecrirescore();
+        //PlayerB.Ecrirescore();
+        if(PlayerA.getScore() == 3 || PlayerB.getScore() == 3 ){
+            fini = true;  
+            }
+        }
+        conclure();
     }
     
     public void Tour(){
