@@ -6,7 +6,7 @@
 package epsi.mtp.b3.benatiapunzano.tp1.chifoumi;
 
 import javax.swing.JOptionPane;
-
+import epsi.mtp.b3.benatiapunzano.tp1.*;
 
 /**
  *
@@ -15,13 +15,15 @@ import javax.swing.JOptionPane;
 public class JeuUnTour {
     private Joueur PlayerA;
     private Joueur PlayerB;
+    private int score;
     
-    public JeuUnTour(String A, String B){
+    public JeuUnTour(String A, String B, int score){
         PlayerA = new Joueur(A);
         PlayerB = new Joueur(B);
+        this.score = score;
     }
     
-    public void Jouer(){
+    public int Jouer(){
         boolean fini = false;
         while(!fini){
         
@@ -29,11 +31,12 @@ public class JeuUnTour {
         JOptionPane.showMessageDialog(null, "Score :\n"+PlayerA.getNom()+" : "+PlayerA.getScore()+"\n"+PlayerB.getNom()+" : "+PlayerB.getScore(), "Résultat", JOptionPane.INFORMATION_MESSAGE, null);
         //PlayerA.Ecrirescore();
         //PlayerB.Ecrirescore();
-        if(PlayerA.getScore() == 3 || PlayerB.getScore() == 3 ){
+        if(PlayerA.getScore() == score || PlayerB.getScore() == score ){
             fini = true;  
             }
         }
-        conclure();
+        int rejouer = conclure();
+        return rejouer;
     }
     
     public void Tour(){
@@ -69,13 +72,16 @@ public class JeuUnTour {
        }
                 
     }
-    public void conclure(){
+    public int conclure(){
+        Object[] btn={"Rejouer","Quitter"};
+        int rejouer = 3;
         if( PlayerA.getScore() > PlayerB.getScore()){
-        JOptionPane.showMessageDialog(null, "Le vainqueur est "+PlayerA.getNom(), "CHI-FOU-MI", JOptionPane.INFORMATION_MESSAGE, null);    
+        rejouer = JOptionPane.showOptionDialog(null, "Le vainqueur est "+PlayerA.getNom(), "CHI-FOU-MI", JOptionPane.YES_NO_OPTION,JOptionPane.QUESTION_MESSAGE, null,btn,btn[0]);    
         //System.out.println("Le vainqueur est "+PlayerA.getNom());
         }else{
-        JOptionPane.showMessageDialog(null, "Le vainqueur est "+PlayerB.getNom(), "CHI-FOU-MI", JOptionPane.INFORMATION_MESSAGE, null);        
+       rejouer = JOptionPane.showOptionDialog(null, "Le vainqueur est "+PlayerB.getNom(), "CHI-FOU-MI", JOptionPane.YES_NO_OPTION,JOptionPane.QUESTION_MESSAGE, null,btn,btn[0]);    
         //System.out.println("Le vainqueur est "+PlayerB.getNom());
         }
+        return rejouer;
     }
 }
