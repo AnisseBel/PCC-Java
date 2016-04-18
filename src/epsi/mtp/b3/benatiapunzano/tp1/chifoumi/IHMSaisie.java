@@ -26,5 +26,5 @@ public class IHMSaisie extends JOptionPane {
 		dialogue.setVisible(true);
 		return (Choix)getValue();
 	}
-
+//nouveau build
 }
